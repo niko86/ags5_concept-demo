@@ -130,7 +130,10 @@ ORDER BY readings DESC;</textarea>
 <div id="results-area" style="margin-top:0.75rem"></div>
 
 <script type="module">
-import * as duckdb from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.1-dev106.0/+esm";
+// Pinned at latest as of 2026-05; @duckdb/duckdb-wasm has no stable
+// release tag so we pin to a concrete dev version rather than `@latest`.
+// Bump as needed; the JsDelivr CDN routes via /+esm for browser ESM.
+import * as duckdb from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.33.1-dev45.0/+esm";
 
 const $ = (id) => document.getElementById(id);
 const statusEl = $("status");
